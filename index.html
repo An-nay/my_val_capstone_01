@@ -7,12 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
 <style>
-:root{--paper:#F2F4F0;--card:#FFFFFF;--ink:#14232B;--mute:#5E6E73;--line:#D9DFDA;--sea:#0F6B66;--sea-2:#D7EBE6;--gold:#E6A817;--bad:#B3261E;
+:root{--paper:#F5F6FA;--card:#FFFFFF;--ink:#11173A;--mute:#8A8D98;--line:#E6E7EC;--sea:#4B51E0;--sea-2:#EDEDFB;--gold:#17D4DE;--bad:#E8505B;--panel:#1B2450;
 --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.5 var(--body)}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
 header{padding:28px clamp(16px,4vw,48px) 8px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
 h1{font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.05;max-width:16ch}
 header p{margin:0;max-width:44ch;color:var(--mute)}
@@ -45,32 +45,32 @@ label.f,div.f{display:flex;flex-direction:column;gap:5px;font-weight:500;font-si
 .f input[type=number],.f select{height:38px;border:1px solid var(--line);border-radius:9px;padding:0 10px;font:400 15px var(--body);background:#fff;color:var(--ink);width:100%}
 .f input[type=range]{accent-color:var(--sea);width:100%}.f output{color:var(--sea);font-weight:600}
 .f.chk{flex-direction:row;align-items:center;gap:8px;height:38px;align-self:end}.f.chk input{width:18px;height:18px;accent-color:var(--sea)}
-.result{position:sticky;top:16px;background:var(--ink);color:#F2F4F0;border-radius:18px;padding:24px}
-.result h2{font-size:15px;font-weight:500;color:#A9BDBB;font-family:var(--body)}
+.result{position:sticky;top:16px;background:var(--panel);color:#F5F6FA;border-radius:18px;padding:24px}
+.result h2{font-size:15px;font-weight:500;color:#9BA3D6;font-family:var(--body)}
 .pick{font:700 clamp(34px,4.5vw,46px)/1.05 var(--display);margin:6px 0 2px;overflow-wrap:anywhere}
 .pick-p{color:var(--gold);font:600 18px var(--body)}
-.rank{margin-top:22px;border-top:1px solid #2F4650;padding-top:16px}
+.rank{margin-top:22px;border-top:1px solid #344082;padding-top:16px}
 .row{margin-bottom:14px}.row div.t{display:flex;justify-content:space-between;font-weight:500;margin-bottom:5px}
-.bar{height:10px;background:#28404A;border-radius:6px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--gold);border-radius:6px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
-.row:nth-child(n+2) .bar i{background:#6FC2B9}
-.note{color:#A9BDBB;font-size:13px;margin:16px 0 0}
+.bar{height:10px;background:#3B4894;border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sea);border-radius:6px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.row + .row .bar i{background:#12A7B5}
+.note{color:#9BA3D6;font-size:13px;margin:16px 0 0}
 .err{background:#3A1F1D;border:1px solid var(--bad);border-radius:10px;padding:12px;color:#FFD9D5;font-size:14px}
 .busy{opacity:.55;transition:opacity .2s}
 .items{list-style:none;margin:0;padding:0}.items li{display:flex;justify-content:space-between;gap:16px;padding:2px 0;font-size:14px}.items li span:last-child{color:var(--mute);white-space:nowrap}.items em{color:var(--sea);font-style:normal;font-size:12px}.none{color:var(--mute);font-size:14px}.f b{font-weight:600;font-size:16px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-.notif{margin-top:22px;border-top:1px solid #28404A;padding-top:18px}
+.notif{margin-top:22px;border-top:1px solid #3B4894;padding-top:18px}
 #side .notif:first-child{margin-top:0;border-top:0;padding-top:0}
-.card{background:#1d333c;border:1px solid #28404A;border-radius:12px;padding:14px}
+.card{background:#324380;border:1px solid #3B4894;border-radius:12px;padding:14px}
 .card b.h{display:block;font:700 17px var(--display);margin-bottom:4px}.msg{font-size:16px;line-height:1.45}
-.pill{display:inline-block;background:#28404A;border-radius:99px;padding:2px 10px;font-size:12px;margin:0 6px 0 0}
-.sub2{color:#A9BDBB;font-size:12.5px}
+.pill{display:inline-block;background:#3B4894;border-radius:99px;padding:2px 10px;font-size:12px;margin:0 6px 0 0}
+.sub2{color:#9BA3D6;font-size:12.5px}
 .vrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.vrow b{font:600 20px var(--display)}
-.valrow{display:flex;align-items:center;gap:8px;margin:12px 0 4px}.valrow label{font-size:13px;color:#C9D6D4}
-.valrow input{height:38px;width:130px;border:1px solid #3a5560;border-radius:9px;padding:0 10px;font:600 16px var(--body);background:#142a33;color:#fff}
+.valrow{display:flex;align-items:center;gap:8px;margin:12px 0 4px}.valrow label{font-size:13px;color:#C3C9EF}
+.valrow input{height:38px;width:130px;border:1px solid #4C58A8;border-radius:9px;padding:0 10px;font:600 16px var(--body);background:#2C3A78;color:#fff}
 .btns{display:flex;gap:10px;margin-top:12px}.btns button{border:0;border-radius:10px;padding:10px 16px;font:600 15px var(--body);cursor:pointer}
-.btns .yes{background:#0F6B66;color:#fff}.btns .yes:hover{background:#13857f}.btns .no{background:#28404A;color:#E8EFEE}.btns .no:hover{background:#34535f}
-.linkbtn{background:none;border:0;color:#6FC2B9;text-decoration:underline;cursor:pointer;font:500 13px var(--body);padding:0;margin-top:8px}
+.btns .yes{background:var(--sea);color:#fff}.btns .yes:hover{background:#3A3FC2}.btns .no{background:#3B4894;color:#E6E8FA}.btns .no:hover{background:#4B5AA0}
+.linkbtn{background:none;border:0;color:#8E96F0;text-decoration:underline;cursor:pointer;font:500 13px var(--body);padding:0;margin-top:8px}
 header{position:relative;padding-top:56px}
 .switch{position:absolute;top:14px;right:clamp(16px,4vw,48px);display:flex;align-items:center;gap:10px;font:500 13px var(--body);color:var(--mute);cursor:pointer;user-select:none}
 .switch input{position:absolute;opacity:0;width:0;height:0}
@@ -78,7 +78,7 @@ header{position:relative;padding-top:56px}
 .switch .track::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.25)}
 .switch input:checked+.track{background:var(--sea)}
 .switch input:checked+.track::after{transform:translateX(18px)}
-.switch input:focus-visible+.track{outline:3px solid var(--gold);outline-offset:2px}
+.switch input:focus-visible+.track{outline:3px solid var(--sea);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -159,10 +159,11 @@ function valueCard(j){
  let body;
  if(c){
   const pct=c.estimate>0?Math.min(100,logged/c.estimate*100):0;
+  const barColor=pct>=75?"#4B51E0":pct>=40?"#5A63E0":"#8089E8"; // same blue family, darker as logged value nears the estimate
   body=`<div class="vrow"><span>Estimated household total</span><b>${money(c.estimate)}</b></div>
    <div class="sub2">${REG?Math.round(REG.confidence_level*100)+"% range":"Range"} ${money(c.lower)} to ${money(c.upper)}, estimated from the first ${c.n_documented} items</div>
    <div class="vrow" style="margin-top:14px"><span>Logged so far</span><b>${money(logged)}</b></div>
-   <div class="bar" style="margin-top:8px"><i style="width:${Math.max(2,pct)}%;background:#6FC2B9"></i></div>
+   <div class="bar" style="margin-top:8px"><i style="width:${Math.max(2,pct)}%;background:${barColor}"></i></div>
    <div class="sub2" style="margin-top:6px">${logged>=c.estimate?"You have reached the estimate.":`${pct.toFixed(0)}% of the estimate, ${money(c.headroom)} to go.`}</div>`;
  }else{
   body=`<div class="vrow"><span>Logged so far</span><b>${money(logged)}</b></div>
