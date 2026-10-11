@@ -1,0 +1,63 @@
+{
+  "item_categories": [
+    "Electronics",
+    "Jewellery and Personal Items",
+    "Furniture",
+    "Clothings",
+    "Appliances",
+    "Other Items"
+  ],
+  "category_ids": {
+    "Electronics": "CAT-001",
+    "Jewellery and Personal Items": "CAT-002",
+    "Furniture": "CAT-003",
+    "Clothings": "CAT-004",
+    "Appliances": "CAT-005",
+    "Other Items": "CAT-006",
+    "Vehicles": "CAT-007"
+  },
+  "typical_item_value": {
+    "Appliances": 700.0,
+    "Clothings": 37.0,
+    "Electronics": 599.0,
+    "Furniture": 399.0,
+    "Jewellery and Personal Items": 500.0,
+    "Other Items": 180.0,
+    "Vehicles": 15000.0
+  },
+  "typical_first_item_value": {
+    "Electronics": 599.0,
+    "Jewellery and Personal Items": 750.0,
+    "Furniture": 425.0,
+    "Clothings": 200.0,
+    "Appliances": 800.0,
+    "Other Items": 250.0
+  },
+  "first_item_examples": {
+    "Electronics": 47,
+    "Jewellery and Personal Items": 43,
+    "Furniture": 60,
+    "Clothings": 21,
+    "Appliances": 57,
+    "Other Items": 69
+  },
+  "typical_item_count": {
+    "Electronics": 4,
+    "Jewellery and Personal Items": 2,
+    "Furniture": 4,
+    "Clothings": 1,
+    "Appliances": 4,
+    "Other Items": 3
+  },
+  "value_to_replacement_ratio": {
+    "Appliances": 1.0,
+    "Clothings": 1.0,
+    "Electronics": 1.0,
+    "Furniture": 1.0,
+    "Jewellery and Personal Items": 1.1872,
+    "Other Items": 1.0,
+    "Vehicles": 1.0
+  },
+  "new_item_evidence_rating": 2.0,
+  "built_from": "163 training households"
+}
