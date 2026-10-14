@@ -80,7 +80,7 @@ regression_train: regression_dataset
 	$(PYTHON_INTERPRETER) -m my_val_capstone_01.regression.modeling.train
 
 
-## Add the five regression columns to model_state.csv
+## Write data/processed/classification/model_state_with_reg.csv (model_state plus the five regression columns)
 .PHONY: regression_features
 regression_features: regression_train
 	$(PYTHON_INTERPRETER) -m my_val_capstone_01.regression.features

@@ -7,20 +7,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
 <style>
-:root{--paper:#F2F4F0;--card:#FFFFFF;--ink:#14232B;--mute:#5E6E73;--line:#D9DFDA;--sea:#0F6B66;--sea-2:#D7EBE6;--gold:#E6A817;--bad:#B3261E;
+:root{--paper:#F5F6FA;--card:#FFFFFF;--ink:#11173A;--mute:#8A8D98;--line:#E6E7EC;--sea:#4B51E0;--sea-2:#EDEDFB;--gold:#17D4DE;--bad:#E8505B;--panel:#1B2450;
 --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.5 var(--body)}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
 header{padding:28px clamp(16px,4vw,48px) 8px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
 h1{font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.05;max-width:16ch}
 header p{margin:0;max-width:44ch;color:var(--mute)}
 .presets{display:flex;gap:8px;flex-wrap:wrap;padding:8px clamp(16px,4vw,48px) 0}
 .presets button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:7px 14px;font:500 14px var(--body);color:var(--ink);cursor:pointer}
 .presets button:hover{border-color:var(--sea);color:var(--sea)}
-main{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;padding:20px clamp(16px,4vw,48px) 56px;align-items:start}
-@media(max-width:960px){main{grid-template-columns:1fr}.result{position:static!important}}
+.presets button.active{background:var(--sea);border-color:var(--sea);color:#fff}
+.pid{padding:8px clamp(16px,4vw,48px) 0;color:var(--mute);font-size:13px}.pid:empty{display:none}
+main{display:grid;grid-template-columns:minmax(0,1fr) 340px 340px;gap:24px;padding:20px clamp(16px,4vw,48px) 56px;align-items:start}
+@media(max-width:1260px){main{grid-template-columns:minmax(0,1fr) 380px}#form{grid-row:1 / span 2}#side{grid-column:2}}
+@media(max-width:960px){main{grid-template-columns:1fr}#form{grid-row:auto}#side{grid-column:auto}.result{position:static!important}}
 section.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
 section.panel>h2{font-size:19px;margin-bottom:2px}.sub{color:var(--mute);margin:0 0 14px;font-size:14px}
 details.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:16px}
@@ -29,7 +32,8 @@ details.panel summary::after{content:"+";color:var(--sea);font-size:20px}details
 details.panel .body{padding:0 22px 20px}
 .shelf{width:100%;border-collapse:collapse}
 .shelf th{font:500 13px var(--body);color:var(--mute);text-align:left;padding:0 0 6px}
-.shelf td{padding:7px 0;border-top:1px solid var(--line)}
+.shelf td{padding:7px 0;border-top:1px solid var(--line);vertical-align:top}
+.shelf th.ai,.shelf td.ai{text-align:right;padding-left:28px;white-space:nowrap}.shelf td.ai{font-weight:600}
 .shelf td:first-child{font-weight:600}.shelf td:first-child small{display:block;color:var(--mute);font-weight:400}
 .step{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .step button{width:34px;height:34px;border:0;background:var(--paper);font-size:18px;cursor:pointer;color:var(--ink)}
@@ -37,99 +41,87 @@ details.panel .body{padding:0 22px 20px}
 .step input{width:46px;text-align:center;border:0;font:600 15px var(--body);height:34px;background:#fff;-moz-appearance:textfield}
 .step input::-webkit-inner-spin-button{display:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px 16px}
-label.f{display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:14px}
+label.f,div.f{display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:14px}
 .f input[type=number],.f select{height:38px;border:1px solid var(--line);border-radius:9px;padding:0 10px;font:400 15px var(--body);background:#fff;color:var(--ink);width:100%}
 .f input[type=range]{accent-color:var(--sea);width:100%}.f output{color:var(--sea);font-weight:600}
 .f.chk{flex-direction:row;align-items:center;gap:8px;height:38px;align-self:end}.f.chk input{width:18px;height:18px;accent-color:var(--sea)}
-.result{position:sticky;top:16px;background:var(--ink);color:#F2F4F0;border-radius:18px;padding:24px}
-.result h2{font-size:15px;font-weight:500;color:#A9BDBB;font-family:var(--body)}
+.result{position:sticky;top:16px;background:var(--panel);color:#F5F6FA;border-radius:18px;padding:24px}
+.result h2{font-size:15px;font-weight:500;color:#9BA3D6;font-family:var(--body)}
 .pick{font:700 clamp(34px,4.5vw,46px)/1.05 var(--display);margin:6px 0 2px;overflow-wrap:anywhere}
 .pick-p{color:var(--gold);font:600 18px var(--body)}
-.rank{margin-top:22px;border-top:1px solid #2F4650;padding-top:16px}
+.rank{margin-top:22px;border-top:1px solid #344082;padding-top:16px}
 .row{margin-bottom:14px}.row div.t{display:flex;justify-content:space-between;font-weight:500;margin-bottom:5px}
-.bar{height:10px;background:#28404A;border-radius:6px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--gold);border-radius:6px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
-.row:nth-child(n+2) .bar i{background:#6FC2B9}
-.note{color:#A9BDBB;font-size:13px;margin:16px 0 0}
+.bar{height:10px;background:#3B4894;border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sea);border-radius:6px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.row + .row .bar i{background:#12A7B5}
+.note{color:#9BA3D6;font-size:13px;margin:16px 0 0}
 .err{background:#3A1F1D;border:1px solid var(--bad);border-radius:10px;padding:12px;color:#FFD9D5;font-size:14px}
 .busy{opacity:.55;transition:opacity .2s}
+.items{list-style:none;margin:0;padding:0}.items li{display:flex;justify-content:space-between;gap:16px;padding:2px 0;font-size:14px}.items li span:last-child{color:var(--mute);white-space:nowrap}.items em{color:var(--sea);font-style:normal;font-size:12px}.none{color:var(--mute);font-size:14px}.f b{font-weight:600;font-size:16px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.notif{margin-top:22px;border-top:1px solid #3B4894;padding-top:18px}
+#side .notif:first-child{margin-top:0;border-top:0;padding-top:0}
+.card{background:#324380;border:1px solid #3B4894;border-radius:12px;padding:14px}
+.card b.h{display:block;font:700 17px var(--display);margin-bottom:4px}.msg{font-size:16px;line-height:1.45}
+.pill{display:inline-block;background:#3B4894;border-radius:99px;padding:2px 10px;font-size:12px;margin:0 6px 0 0}
+.sub2{color:#9BA3D6;font-size:12.5px}
+.vrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.vrow b{font:600 20px var(--display)}
+.valrow{display:flex;align-items:center;gap:8px;margin:12px 0 4px}.valrow label{font-size:13px;color:#C3C9EF}
+.valrow input{height:38px;width:130px;border:1px solid #4C58A8;border-radius:9px;padding:0 10px;font:600 16px var(--body);background:#2C3A78;color:#fff}
+.btns{display:flex;gap:10px;margin-top:12px}.btns button{border:0;border-radius:10px;padding:10px 16px;font:600 15px var(--body);cursor:pointer}
+.btns .yes{background:var(--sea);color:#fff}.btns .yes:hover{background:#3A3FC2}.btns .no{background:#3B4894;color:#E6E8FA}.btns .no:hover{background:#4B5AA0}
+.linkbtn{background:none;border:0;color:#8E96F0;text-decoration:underline;cursor:pointer;font:500 13px var(--body);padding:0;margin-top:8px}
+header{position:relative;padding-top:56px}
+.switch{position:absolute;top:14px;right:clamp(16px,4vw,48px);display:flex;align-items:center;gap:10px;font:500 13px var(--body);color:var(--mute);cursor:pointer;user-select:none}
+.switch input{position:absolute;opacity:0;width:0;height:0}
+.switch .track{width:40px;height:22px;border-radius:99px;background:var(--line);position:relative;transition:background .2s}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.switch input:checked+.track{background:var(--sea)}
+.switch input:checked+.track::after{transform:translateX(18px)}
+.switch input:focus-visible+.track{outline:3px solid var(--sea);outline-offset:2px}
 </style>
 </head>
 <body>
 <header>
+  <label class="switch" title="Show the fields hidden for customers"><input type="checkbox" id="techswitch"><span class="track"></span>Show technical details</label>
   <h1>What should this household document next?</h1>
   <p>Describe a household in myVal. The trained models rank the categories most likely to be worth capturing next, and update as you edit.</p>
 </header>
 <div class="presets" id="presets" aria-label="Example households"></div>
+<div class="pid" id="pid"></div>
 <main>
   <div id="form"></div>
   <aside class="result" id="result" aria-live="polite"><h2>Recommendation</h2><p class="note">Loading…</p></aside>
+  <aside class="result" id="side" aria-live="polite"></aside>
 </main>
 
 <script>
-// Fill in real names once you know them, e.g. {"CAT-001":"Electronics"}. Shown next to the code.
-const LABELS = {"CAT-001":"Electronics","CAT-002":"Jewellery and Personal Items","CAT-003":"Furniture","CAT-004":"Clothings","CAT-005":"Appliances","CAT-006":"Other Items","CAT-007":"Vehicles"};
-
-const CATS = ["CAT-001","CAT-002","CAT-003","CAT-004","CAT-005","CAT-006","CAT-007"];
-const OPT = {
- Property_Type:["apartment","duplex","house","semi-detached","terrace","villa"],
- Occupancy_Type:["owner","tenant"],
- Insurance_Coverage_Type:["contents-insurance","home-and-contents-insurance","home-insurance","landlord-insurance"],
- Age_Band:["18-24","25-34","35-44","45-54","55-64","65+"],
- Gender:["Female","Male","Prefer not to say"],
- State:["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"],
- Occupation:["Accountant","Aged Care Worker","Bank Officer","Barista","Bookkeeper","Carpenter","Chef","Childcare Worker","Civil Engineer","Data Analyst","Electrician","Farmer","Graphic Designer","Hairdresser","Marketing Coordinator","Mechanic","Paramedic","Physiotherapist","Plumber","Police Officer","Primary School Teacher","Project Manager","Real Estate Agent","Registered Nurse","Retail Manager","Retired","Self-employed Consultant","Software Engineer","Student","Truck Driver","University Lecturer","Warehouse Supervisor"],
- Household_Type:["couple_no_children","family_with_children","share_house","single","single_parent"],
- Income_Band:["under_50k","50k_75k","75k_100k","100k_150k","over_150k"],
- Financial_Literacy_Band:["low","medium","high"],
- Engagement_Tier:["dormant","casual","engaged","power"],
- Membership_Level:["free","plus","premium"],
- Account_Status:["active","deactivated"],
- Preferred_Channel:["email","in_app_chat","phone","push"],
- Preferred_Explanation_Style:["detailed","examples","short_summary","step_by_step"],
- Prior_Claim_Experience:["none","one","multiple"],
- Underinsurance_Awareness:["unaware","somewhat_aware","well_informed"]
-};
+// Everything below that describes a household comes from the dataset: modeling/build_demo_households.py writes
+// models/demo_households.json and the server returns it at /api/households.
+let LABELS={},CATS=[],OPT={},HOUSEHOLDS={},S={},ITEMS=[],REG=null,HOLD=null;   // category names, category ids, dropdown options, example households, features, logged items
 const nice = s => s.replace(/_/g," ").replace(/-/g," ");
-
-const base = {
- mean_evidence_rating:2, documented_value_total:3000, documented_replacement_cost_total:3300,
- ai_category_match_rate:1, ai_suggestion_acceptance_rate:.5, ai_estimated_value_total:2300, ai_estimated_value_mean:760, ai_estimated_value_max:1300,
- Property_Type:"house", Occupancy_Type:"owner", Number_Of_Occupants:3, Number_Of_Bedrooms:4, Property_Valuation_AUD:109292, Is_Home_Insured:1,
- Insurance_Coverage_Type:"home-and-contents-insurance", Insurance_Confidence_1_5:3, Is_Primary:true, Notification_Opt_In:true, Tenure_Months:20,
- Age_Band:"35-44", Gender:"Female", State:"NSW", Occupation:"Accountant", Household_Type:"family_with_children", Income_Band:"75k_100k",
- Financial_Literacy_Band:"medium", Engagement_Tier:"engaged", Membership_Level:"free", Account_Status:"active", Preferred_Channel:"email",
- Preferred_Explanation_Style:"short_summary", Prior_Claim_Experience:"none", Underinsurance_Awareness:"somewhat_aware",
- video_count:0, total_video_duration_seconds:0, mean_video_duration_seconds:0, total_rooms_covered:0, total_items_detected:0
-};
-const cnt = (d,a)=>Object.fromEntries(CATS.flatMap((c,i)=>[[`documented_count_${c}`,d[i]],[`ai_count_${c}`,a[i]]]));
-const PRESETS = {
- "Just started": {...base, ...cnt([1,0,0,0,0,0,0],[1,0,0,0,0,0,0]), documented_value_total:800, documented_replacement_cost_total:900},
- "Typical household": {...base, ...cnt([2,1,2,0,1,1,0],[2,1,2,0,1,1,0])},
- "Well documented": {...base, ...cnt([6,3,5,1,3,2,1],[6,3,5,1,3,2,1]), documented_value_total:24000, documented_replacement_cost_total:28000,
-   ai_estimated_value_total:19000, ai_estimated_value_mean:1200, ai_estimated_value_max:5200, Engagement_Tier:"power", video_count:2,
-   total_video_duration_seconds:180, mean_video_duration_seconds:90, total_rooms_covered:5, total_items_detected:21}
-};
-let S = {...PRESETS["Typical household"]};
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money = v => v==null ? "no value recorded" : "A$"+Math.round(v).toLocaleString("en-AU");
+let SHOW_ALL = false;   // switch in the top-right corner: category codes, "AI detected", value totals and evidence rating
 
 const $ = s => document.querySelector(s);
 const el = (h)=>{const t=document.createElement("template");t.innerHTML=h.trim();return t.content.firstChild};
 
 function num(k,label,min,max,step=1){return `<label class="f">${label}<input type="number" data-k="${k}" min="${min}" max="${max}" step="${step}" value="${S[k]}"></label>`}
-function sel(k){return `<label class="f">${nice(k)}<select data-k="${k}">${OPT[k].map(o=>`<option ${S[k]===o?"selected":""}>${o}</option>`).join("")}</select></label>`}
+function sel(k){const blank=S[k]==null||S[k]==="";return `<label class="f">${nice(k)}<select data-k="${k}">${blank?`<option value="" selected>not recorded</option>`:""}${OPT[k].map(o=>`<option ${S[k]===o?"selected":""}>${o}</option>`).join("")}</select></label>`}
 function rng(k,label,min,max,step){return `<label class="f">${label} <output>${S[k]}</output><input type="range" data-k="${k}" min="${min}" max="${max}" step="${step}" value="${S[k]}"></label>`}
 function chk(k,label){return `<label class="f chk"><input type="checkbox" data-k="${k}" ${S[k]?"checked":""}>${label}</label>`}
-function stepper(k){return `<span class="step"><button type="button" data-d="-1" data-k="${k}" aria-label="decrease">−</button><input type="number" min="0" data-k="${k}" value="${S[k]}" aria-label="${k}"><button type="button" data-d="1" data-k="${k}" aria-label="increase">+</button></span>`}
-
 function build(){
  $("#form").innerHTML = `
- <section class="panel"><h2>Household inventory</h2><p class="sub">How many items are documented in each category, and how many the myVal AI has detected.</p>
-  <table class="shelf"><thead><tr><th>Category</th><th>Documented</th><th>AI detected</th></tr></thead><tbody>
-  ${CATS.map(c=>`<tr><td>${c}${LABELS[c]?`<small>${LABELS[c]}</small>`:""}</td><td>${stepper("documented_count_"+c)}</td><td>${stepper("ai_count_"+c)}</td></tr>`).join("")}
+ <section class="panel"><h2>Household inventory</h2><p class="sub">${SHOW_ALL?"The items documented in each category, and how many the myVal AI has detected.":"The items documented in each category."}</p>
+  <table class="shelf"><thead><tr><th>Category</th><th>Items logged</th>${SHOW_ALL?"<th class='ai'>AI detected</th>":""}</tr></thead><tbody>
+  ${CATS.map(c=>{const list=ITEMS.filter(i=>i.category_id===c),n=`${list.length} item${list.length===1?"":"s"}`;
+   return `<tr><td>${SHOW_ALL?`${c}<small>${esc(LABELS[c])} · ${n}</small>`:`${esc(LABELS[c])}<small>${n}</small>`}</td>
+    <td>${list.length?`<ul class="items">${list.map(i=>`<li><span>${esc(i.name)}${i.added?` <em>added just now</em>`:""}</span><span>${money(i.value)}</span></li>`).join("")}</ul>`:`<span class="none">Nothing logged yet</span>`}</td>
+    ${SHOW_ALL?`<td class="ai">${S["ai_count_"+c]}</td>`:""}</tr>`}).join("")}
   </tbody></table>
-  <div class="grid" style="margin-top:16px">${num("documented_value_total","Documented value (AUD)",0,1e7,100)}${num("documented_replacement_cost_total","Replacement cost (AUD)",0,1e7,100)}${rng("mean_evidence_rating","Mean evidence rating",1,5,.1)}</div></section>
- <details class="panel"><summary>AI analysis</summary><div class="body"><div class="grid">
+  ${SHOW_ALL?`<div class="grid" style="margin-top:16px"><div class="f">Documented value (AUD)<b>${money(S.documented_value_total)}</b></div><div class="f">Replacement cost (AUD)<b>${money(S.documented_replacement_cost_total)}</b></div><div class="f">Mean evidence rating<b>${(+S.mean_evidence_rating).toFixed(2)}</b></div></div>`:""}</section>
+ ${SHOW_ALL?`<details class="panel"><summary>AI analysis</summary><div class="body"><div class="grid">
   ${rng("ai_category_match_rate","AI category match rate",0,1,.05)}${rng("ai_suggestion_acceptance_rate","Suggestions accepted",0,1,.05)}
   ${num("ai_estimated_value_total","AI value, total (AUD)",0,1e7,100)}${num("ai_estimated_value_mean","AI value, mean (AUD)",0,1e6,50)}${num("ai_estimated_value_max","AI value, max (AUD)",0,1e6,50)}</div></div></details>
  <details class="panel" open><summary>Property</summary><div class="body"><div class="grid">
@@ -139,17 +131,19 @@ function build(){
   ${["Age_Band","Gender","State","Occupation","Household_Type","Income_Band","Financial_Literacy_Band","Engagement_Tier","Membership_Level","Account_Status","Preferred_Channel","Preferred_Explanation_Style","Prior_Claim_Experience","Underinsurance_Awareness"].map(sel).join("")}
   ${num("Tenure_Months","Tenure (months)",0,240)}${chk("Is_Primary","Primary account holder")}${chk("Notification_Opt_In","Notifications on")}</div></div></details>
  <details class="panel"><summary>Property video</summary><div class="body"><div class="grid">
-  ${num("video_count","Videos uploaded",0,50)}${num("total_video_duration_seconds","Total duration (s)",0,1e5,10)}${num("mean_video_duration_seconds","Mean duration (s)",0,1e4,10)}${num("total_rooms_covered","Rooms covered",0,50)}${num("total_items_detected","Items detected",0,500)}</div></div></details>`;
+  ${num("video_count","Videos uploaded",0,50)}${num("total_video_duration_seconds","Total duration (s)",0,1e5,10)}${num("mean_video_duration_seconds","Mean duration (s)",0,1e4,10)}${num("total_rooms_covered","Rooms covered",0,50)}${num("total_items_detected","Items detected",0,500)}</div></div></details>`:""}`;
 }
 
-$("#presets").innerHTML = Object.keys(PRESETS).map(n=>`<button type="button" data-p="${n}">${n}</button>`).join("");
-$("#presets").addEventListener("click",e=>{const p=e.target.dataset.p;if(p){S={...PRESETS[p]};build();run()}});
+let CURRENT=null;   // the example household that was loaded last
+function markPreset(){   // highlight the chosen button; with the technical switch on, also show its property id
+ document.querySelectorAll("#presets button").forEach(b=>{const on=b.dataset.p===CURRENT;b.classList.toggle("active",on);b.setAttribute("aria-pressed",on)});
+ $("#pid").textContent=SHOW_ALL&&CURRENT?`Property ID: ${HOUSEHOLDS[CURRENT].property_id}`:"";
+}
+function loadHousehold(name){const h=HOUSEHOLDS[name];S={...h.features};ITEMS=h.items.map(i=>({...i}));CURRENT=name;markPreset()}
+$("#presets").addEventListener("click",e=>{const p=e.target.dataset.p;if(p){loadHousehold(p);SUGGESTING=true;build();run()}});
 
-$("#form").addEventListener("click",e=>{
- const b=e.target.closest("button[data-d]");if(!b)return;
- const k=b.dataset.k;S[k]=Math.max(0,(+S[k]||0)+ +b.dataset.d);
- b.parentElement.querySelector("input").value=S[k];run();
-});
+$("#techswitch").addEventListener("change",e=>{SHOW_ALL=e.target.checked;build();markPreset()});
+
 $("#form").addEventListener("input",e=>{
  const t=e.target,k=t.dataset.k;if(!k)return;
  S[k]=t.type==="checkbox"?(k==="Is_Home_Insured"?+t.checked:t.checked):(t.type==="number"||t.type==="range"?(t.value===""?0:+t.value):t.value);
@@ -157,27 +151,83 @@ $("#form").addEventListener("input",e=>{
  run();
 });
 
+// ---- household value card: the regression's estimate against what has been logged (needs 10+ valued items)
+function valueCard(j){
+ const money=v=>"A$"+Math.round(v).toLocaleString("en-AU");
+ const counted=ITEMS.filter(i=>i.category!=="Vehicles"&&i.value!=null&&i.value===i.value);
+ const c=j.value_cap,logged=c?c.logged:counted.reduce((a,i)=>a+i.value,0);
+ let body;
+ if(c){
+  const pct=c.estimate>0?Math.min(100,logged/c.estimate*100):0;
+  const barColor=pct>=75?"#4B51E0":pct>=40?"#5A63E0":"#8089E8"; // same blue family, darker as logged value nears the estimate
+  body=`<div class="vrow"><span>Estimated household total</span><b>${money(c.estimate)}</b></div>
+   <div class="sub2">${REG?Math.round(REG.confidence_level*100)+"% range":"Range"} ${money(c.lower)} to ${money(c.upper)}, estimated from the first ${c.n_documented} items</div>
+   <div class="vrow" style="margin-top:14px"><span>Logged so far</span><b>${money(logged)}</b></div>
+   <div class="bar" style="margin-top:8px"><i style="width:${Math.max(2,pct)}%;background:${barColor}"></i></div>
+   <div class="sub2" style="margin-top:6px">${logged>=c.estimate?"You have reached the estimate.":`${pct.toFixed(0)}% of the estimate, ${money(c.headroom)} to go.`}</div>`;
+ }else{
+  body=`<div class="vrow"><span>Logged so far</span><b>${money(logged)}</b></div>
+   <div class="sub2" style="margin-top:8px">${!REG?`The household total is not available.`:counted.length<REG.min_items?`The household total is estimated once ${REG.min_items} items with a value are logged (${counted.length} so far).`:`The household total could not be estimated for this household (${counted.length} items with a value are logged).`}</div>`;
+ }
+ return `<div class="notif"><h2>Household value</h2><div style="height:10px"></div><div class="card">${body}</div></div>`;
+}
+
+// ---- next-item suggestions, fed by the recommender (the only addition to this page)
+let LAST=null,SUGGESTING=true;
+function notifCard(j){
+ const sg=j.suggestion,pct=x=>(x*100).toFixed(1)+"%";let body;
+ if(!SUGGESTING){body=`<b class="h">Okay, we'll stop asking</b><div class="msg">You can keep editing the household on the left.</div><button type="button" class="linkbtn" id="askagain">Start suggestions again</button>`}
+ else if(sg.done){body=`<b class="h">That's everything we'd suggest</b><div class="msg">${sg.message}</div>`}
+ else{
+  const tag=sg.stage==="new_category"?`New category, recommender confidence ${pct(sg.probability)}`:`More ${sg.category.toLowerCase()}, you have ${sg.have} (typical ${sg.typical})`;
+  body=`<span class="pill">${tag}</span><div class="msg" style="margin-top:8px">${sg.message}</div>
+   <div class="valrow"><label for="sugname">Item name (optional)</label><input type="text" id="sugname" maxlength="60" placeholder="e.g. what is it?" style="width:190px;font-weight:500"></div>
+   <div class="valrow"><label for="sugval">Estimated value (AUD)</label><input type="number" id="sugval" min="0" step="10" value="${Math.round(sg.suggested_value)}"></div>
+   <div class="sub2">${sg.stage==="new_category"?"This is the typical value of the first item people log in this category.":"This is a typical value for items in this category."} Change it if yours is different.</div>
+   <div class="btns"><button type="button" class="yes" id="logyes">Yes, log it</button><button type="button" class="no" id="logno">No thanks</button></div>`;
+ }
+ return `<div class="notif"><h2>Next item to log</h2><div style="height:10px"></div><div class="card">${body}</div></div>`;
+}
+$("#side").addEventListener("click",async e=>{
+ if(e.target.id==="logyes"&&LAST&&LAST.suggestion&&!LAST.suggestion.done){
+  const v=parseFloat($("#sugval").value);if(!(v>=0))return;
+  const r=await fetch("/api/log-item",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({features:S,category:LAST.suggestion.category,value:v})});
+  const j=await r.json();if(!r.ok)return;
+  const cat=LAST.suggestion.category,id=CATS.find(c=>LABELS[c]===cat),nm=($("#sugname").value||"").trim();
+  ITEMS.push({name:nm||`${cat} item`,category:cat,category_id:id,value:v,added:true});
+  Object.assign(S,j.features);build();clearTimeout(timer);predict();return}
+ if(e.target.id==="logno"){SUGGESTING=false;if(LAST)show(LAST);return}
+ if(e.target.id==="askagain"){SUGGESTING=true;if(LAST)show(LAST)}
+});
 let timer,seq=0;
-function run(){clearTimeout(timer);$("#result").classList.add("busy");timer=setTimeout(predict,220)}
+function run(){clearTimeout(timer);$("#result").classList.add("busy");$("#side").classList.add("busy");timer=setTimeout(predict,220)}
 async function predict(){
  const id=++seq;
  try{
-  const r=await fetch("/api/predict",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(S)});
+  const r=await fetch("/api/predict",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...S,items:ITEMS.map(i=>({category:i.category,value:i.value}))})});
   const j=await r.json();if(id!==seq)return;
   if(!r.ok)throw new Error(j.detail||"Prediction failed");
-  show(j);
- }catch(err){if(id===seq)$("#result").innerHTML=`<h2>Recommendation</h2><div class="err"><b>Couldn't get a prediction.</b><br>${String(err.message).replace(/</g,"&lt;")}<br>Check that the server is running and try again.</div>`}
- $("#result").classList.remove("busy");
+  LAST=j;show(j);
+ }catch(err){if(id===seq){$("#side").innerHTML="";$("#result").innerHTML=`<h2>Recommendation</h2><div class="err"><b>Couldn't get a prediction.</b><br>${String(err.message).replace(/</g,"&lt;")}<br>Check that the server is running and try again.</div>`}}
+ $("#result").classList.remove("busy");$("#side").classList.remove("busy");
 }
 function show(j){
  const pct=x=>(x*100).toFixed(1)+"%",top=j.top_3[0];
- $("#result").innerHTML=`<h2>Most likely next category</h2>
-  <div class="pick">${j.top_1.category}</div><div class="pick-p">${pct(j.top_1.probability)} confidence</div>
+ const sg=j.suggestion,fresh=sg&&sg.stage==="new_category";   // the best category not yet documented, the same one the card asks about
+ $("#result").innerHTML=`<h2>${fresh?"Most likely next category to document":"Most likely next category"}</h2>
+  <div class="pick">${fresh?sg.category:j.top_1.category}</div>
   <div class="rank"><h2>Ranked shortlist</h2><div style="height:12px"></div>
   ${j.top_3.map(r=>`<div class="row"><div class="t"><span>${r.category}</span><span>${pct(r.probability)}</span></div><div class="bar"><i style="width:${Math.max(2,r.probability*100)}%"></i></div></div>`).join("")}</div>
-  <p class="note">The single pick comes from one model and the shortlist from another, so they can differ. The shortlist is the more reliable of the two: the true next category was in the top 2 about 71% of the time in the author's holdout test. This is a prototype, not a verdict.</p>`;
+  <p class="note">The single pick comes from one model and the shortlist from another, so they can differ. The shortlist is the more reliable of the two: the true next category was in the top 2${HOLD?` about ${Math.round(HOLD.top_2*100)}% of the time`:""} in the author's holdout test. This is a prototype, not a verdict.</p>
+`;
+ $("#side").innerHTML=`${valueCard(j)}
+  ${notifCard(j)}`;
 }
-build();run();
+fetch("/api/households").then(r=>r.json()).then(d=>{
+ LABELS=d.labels;CATS=Object.keys(LABELS);OPT=d.options;HOUSEHOLDS=d.households;REG=d.regression;HOLD=d.holdout;
+ $("#presets").innerHTML=Object.keys(HOUSEHOLDS).map(n=>`<button type="button" data-p="${n}">${n}</button>`).join("");
+ loadHousehold("Typical household");build();run();
+}).catch(err=>{$("#result").innerHTML=`<h2>Recommendation</h2><div class="err"><b>Couldn't load the households.</b><br>${esc(err.message)}<br>Run modeling/build_demo_households.py and restart the server.</div>`});
 </script>
 </body>
 </html>

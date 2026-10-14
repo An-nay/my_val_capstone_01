@@ -4,7 +4,7 @@ This model sits next to the next-category recommendation model. It estimates the
 
 ## Folder layout
 
-The regression files are kept in their own `regression/` subfolders. The files of the classification team (the notebooks `01_fm` to `05_fm`, the Random Forest models, `modeling/predict.py`, `server.py` and `index.html`) are the team's originals and are left where they are.
+The regression files are kept in their own `regression/` subfolders. The files of the classification team (the notebooks `01_fm` to `05_fm`, the Random Forest models, `modeling/predict.py`, `server.py` and `index.html`) are the team's originals and are left where they are, except that `server.py` and `index.html` were later extended for the suggestion loop (see the README).
 
 | Folder | Regression | Classification (the team's files) |
 |---|---|---|

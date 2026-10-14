@@ -195,3 +195,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Office lock files (for example while a presentation is open)
+~$*

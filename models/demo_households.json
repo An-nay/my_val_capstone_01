@@ -1,0 +1,1168 @@
+{
+ "labels": {
+  "CAT-001": "Electronics",
+  "CAT-002": "Jewellery and Personal Items",
+  "CAT-003": "Furniture",
+  "CAT-004": "Clothings",
+  "CAT-005": "Appliances",
+  "CAT-006": "Other Items",
+  "CAT-007": "Vehicles"
+ },
+ "options": {
+  "Property_Type": [
+   "apartment",
+   "duplex",
+   "house",
+   "semi-detached",
+   "terrace",
+   "villa"
+  ],
+  "Occupancy_Type": [
+   "owner",
+   "tenant"
+  ],
+  "Insurance_Coverage_Type": [
+   "contents-insurance",
+   "home-and-contents-insurance",
+   "home-insurance",
+   "landlord-insurance",
+   "other"
+  ],
+  "Age_Band": [
+   "18-24",
+   "25-34",
+   "35-44",
+   "45-54",
+   "55-64",
+   "65+"
+  ],
+  "Gender": [
+   "Female",
+   "Male",
+   "Prefer not to say"
+  ],
+  "State": [
+   "ACT",
+   "NSW",
+   "NT",
+   "QLD",
+   "SA",
+   "TAS",
+   "VIC",
+   "WA"
+  ],
+  "Occupation": [
+   "Accountant",
+   "Aged Care Worker",
+   "Bank Officer",
+   "Barista",
+   "Bookkeeper",
+   "Carpenter",
+   "Chef",
+   "Childcare Worker",
+   "Civil Engineer",
+   "Data Analyst",
+   "Electrician",
+   "Farmer",
+   "Graphic Designer",
+   "Hairdresser",
+   "Marketing Coordinator",
+   "Mechanic",
+   "Paramedic",
+   "Physiotherapist",
+   "Plumber",
+   "Police Officer",
+   "Primary School Teacher",
+   "Project Manager",
+   "Real Estate Agent",
+   "Registered Nurse",
+   "Retail Manager",
+   "Retired",
+   "Self-employed Consultant",
+   "Software Engineer",
+   "Student",
+   "Truck Driver",
+   "University Lecturer",
+   "Warehouse Supervisor"
+  ],
+  "Household_Type": [
+   "couple_no_children",
+   "family_with_children",
+   "share_house",
+   "single",
+   "single_parent"
+  ],
+  "Income_Band": [
+   "100k_150k",
+   "50k_75k",
+   "75k_100k",
+   "over_150k",
+   "under_50k"
+  ],
+  "Financial_Literacy_Band": [
+   "high",
+   "low",
+   "medium"
+  ],
+  "Engagement_Tier": [
+   "casual",
+   "dormant",
+   "engaged",
+   "power"
+  ],
+  "Membership_Level": [
+   "free",
+   "plus",
+   "premium"
+  ],
+  "Account_Status": [
+   "active",
+   "deactivated"
+  ],
+  "Preferred_Channel": [
+   "email",
+   "in_app_chat",
+   "phone",
+   "push"
+  ],
+  "Preferred_Explanation_Style": [
+   "detailed",
+   "examples",
+   "short_summary",
+   "step_by_step"
+  ],
+  "Prior_Claim_Experience": [
+   "multiple",
+   "none",
+   "one"
+  ],
+  "Underinsurance_Awareness": [
+   "somewhat_aware",
+   "unaware",
+   "well_informed"
+  ]
+ },
+ "households": {
+  "Just started": {
+   "property_id": "PRP-000059",
+   "prediction_time": "2025-07-27 07:19:43",
+   "features": {
+    "documented_asset_count": 1,
+    "documented_category_count": 1,
+    "documented_value_total": 180.0,
+    "documented_replacement_cost_total": 180.0,
+    "mean_evidence_rating": 2.0,
+    "ai_asset_count": 1.0,
+    "ai_category_match_rate": 1.0,
+    "ai_suggestion_acceptance_rate": 1.0,
+    "ai_estimated_value_total": 180.0,
+    "ai_estimated_value_mean": 180.0,
+    "ai_estimated_value_max": 180.0,
+    "ai_count_CAT-001": 0.0,
+    "ai_count_CAT-002": 0.0,
+    "ai_count_CAT-003": 1.0,
+    "ai_count_CAT-004": 0.0,
+    "ai_count_CAT-005": 0.0,
+    "ai_count_CAT-006": 0.0,
+    "ai_count_CAT-007": 0.0,
+    "Property_Type": "duplex",
+    "Occupancy_Type": "owner",
+    "Number_Of_Occupants": 3,
+    "Number_Of_Bedrooms": 4,
+    "Property_Valuation_AUD": 114876,
+    "Is_Home_Insured": 1,
+    "Insurance_Coverage_Type": "home-and-contents-insurance",
+    "Is_Primary": true,
+    "Financial_Literacy_Band": "medium",
+    "Insurance_Confidence_1_5": 4,
+    "Engagement_Tier": "casual",
+    "Preferred_Channel": "push",
+    "Preferred_Explanation_Style": "detailed",
+    "Notification_Opt_In": false,
+    "Household_Type": "couple_no_children",
+    "Income_Band": "over_150k",
+    "Tenure_Months": 4,
+    "Prior_Claim_Experience": "none",
+    "Underinsurance_Awareness": "unaware",
+    "Age_Band": "18-24",
+    "Gender": "Female",
+    "State": "WA",
+    "Occupation": "Barista",
+    "Membership_Level": "free",
+    "Account_Status": "active",
+    "video_count": 0.0,
+    "total_video_duration_seconds": 0.0,
+    "mean_video_duration_seconds": 0.0,
+    "total_rooms_covered": 0.0,
+    "total_items_detected": 0.0,
+    "documented_count_CAT-001": 0,
+    "documented_count_CAT-002": 0,
+    "documented_count_CAT-003": 1,
+    "documented_count_CAT-004": 0,
+    "documented_count_CAT-005": 0,
+    "documented_count_CAT-006": 0,
+    "documented_count_CAT-007": 0
+   },
+   "items": [
+    {
+     "asset_id": "AST-0001659",
+     "name": "Bar Stool",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 180.0
+    }
+   ]
+  },
+  "Typical household": {
+   "property_id": "PRP-000176",
+   "prediction_time": "2025-09-18 03:18:15",
+   "features": {
+    "documented_asset_count": 7,
+    "documented_category_count": 4,
+    "documented_value_total": 14800.0,
+    "documented_replacement_cost_total": 14800.0,
+    "mean_evidence_rating": 2.0,
+    "ai_asset_count": 7.0,
+    "ai_category_match_rate": 0.8571428571428571,
+    "ai_suggestion_acceptance_rate": 0.4285714285714285,
+    "ai_estimated_value_total": 11977.0,
+    "ai_estimated_value_mean": 1711.0,
+    "ai_estimated_value_max": 4999.0,
+    "ai_count_CAT-001": 3.0,
+    "ai_count_CAT-002": 0.0,
+    "ai_count_CAT-003": 1.0,
+    "ai_count_CAT-004": 0.0,
+    "ai_count_CAT-005": 2.0,
+    "ai_count_CAT-006": 1.0,
+    "ai_count_CAT-007": 0.0,
+    "Property_Type": "terrace",
+    "Occupancy_Type": "owner",
+    "Number_Of_Occupants": 2,
+    "Number_Of_Bedrooms": 3,
+    "Property_Valuation_AUD": 90060,
+    "Is_Home_Insured": 1,
+    "Insurance_Coverage_Type": "home-insurance",
+    "Is_Primary": true,
+    "Financial_Literacy_Band": "medium",
+    "Insurance_Confidence_1_5": 2,
+    "Engagement_Tier": "engaged",
+    "Preferred_Channel": "in_app_chat",
+    "Preferred_Explanation_Style": "step_by_step",
+    "Notification_Opt_In": true,
+    "Household_Type": "family_with_children",
+    "Income_Band": "100k_150k",
+    "Tenure_Months": 36,
+    "Prior_Claim_Experience": "none",
+    "Underinsurance_Awareness": "well_informed",
+    "Age_Band": "55-64",
+    "Gender": "Female",
+    "State": "NSW",
+    "Occupation": "Real Estate Agent",
+    "Membership_Level": "free",
+    "Account_Status": "active",
+    "video_count": 1.0,
+    "total_video_duration_seconds": 12.0,
+    "mean_video_duration_seconds": 12.0,
+    "total_rooms_covered": 1.0,
+    "total_items_detected": 0.0,
+    "documented_count_CAT-001": 2,
+    "documented_count_CAT-002": 0,
+    "documented_count_CAT-003": 2,
+    "documented_count_CAT-004": 0,
+    "documented_count_CAT-005": 2,
+    "documented_count_CAT-006": 1,
+    "documented_count_CAT-007": 0
+   },
+   "items": [
+    {
+     "asset_id": "AST-0006722",
+     "name": "Front Load Washer",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 1000.0
+    },
+    {
+     "asset_id": "AST-0006723",
+     "name": "Smart Fridge with Touchscreen",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 5500.0
+    },
+    {
+     "asset_id": "AST-0006724",
+     "name": "Gaming PC",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 2500.0
+    },
+    {
+     "asset_id": "AST-0006725",
+     "name": "QLED TV",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1000.0
+    },
+    {
+     "asset_id": "AST-0006726",
+     "name": "Smart Display",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 900.0
+    },
+    {
+     "asset_id": "AST-0006727",
+     "name": "Dining Table",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 2500.0
+    },
+    {
+     "asset_id": "AST-0006728",
+     "name": "Allen Iverson Framed Jersey",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 1400.0
+    }
+   ]
+  },
+  "Well documented": {
+   "property_id": "PRP-000588",
+   "prediction_time": "2025-07-16 12:44:12",
+   "features": {
+    "documented_asset_count": 21,
+    "documented_category_count": 4,
+    "documented_value_total": 38376.0,
+    "documented_replacement_cost_total": 38376.0,
+    "mean_evidence_rating": 2.0,
+    "ai_asset_count": 21.0,
+    "ai_category_match_rate": 0.9523809523809524,
+    "ai_suggestion_acceptance_rate": 0.4761904761904761,
+    "ai_estimated_value_total": 25871.0,
+    "ai_estimated_value_mean": 1231.952380952381,
+    "ai_estimated_value_max": 3999.0,
+    "ai_count_CAT-001": 2.0,
+    "ai_count_CAT-002": 0.0,
+    "ai_count_CAT-003": 16.0,
+    "ai_count_CAT-004": 0.0,
+    "ai_count_CAT-005": 2.0,
+    "ai_count_CAT-006": 1.0,
+    "ai_count_CAT-007": 0.0,
+    "Property_Type": "house",
+    "Occupancy_Type": "tenant",
+    "Number_Of_Occupants": 2,
+    "Number_Of_Bedrooms": 3,
+    "Property_Valuation_AUD": 82360,
+    "Is_Home_Insured": 1,
+    "Insurance_Coverage_Type": "contents-insurance",
+    "Is_Primary": false,
+    "Financial_Literacy_Band": "medium",
+    "Insurance_Confidence_1_5": 2,
+    "Engagement_Tier": "dormant",
+    "Preferred_Channel": "push",
+    "Preferred_Explanation_Style": "short_summary",
+    "Notification_Opt_In": false,
+    "Household_Type": "single",
+    "Income_Band": "100k_150k",
+    "Tenure_Months": 18,
+    "Prior_Claim_Experience": "none",
+    "Underinsurance_Awareness": "somewhat_aware",
+    "Age_Band": "35-44",
+    "Gender": "Male",
+    "State": "TAS",
+    "Occupation": "Childcare Worker",
+    "Membership_Level": "free",
+    "Account_Status": "active",
+    "video_count": 0.0,
+    "total_video_duration_seconds": 0.0,
+    "mean_video_duration_seconds": 0.0,
+    "total_rooms_covered": 0.0,
+    "total_items_detected": 0.0,
+    "documented_count_CAT-001": 2,
+    "documented_count_CAT-002": 0,
+    "documented_count_CAT-003": 17,
+    "documented_count_CAT-004": 0,
+    "documented_count_CAT-005": 1,
+    "documented_count_CAT-006": 1,
+    "documented_count_CAT-007": 0
+   },
+   "items": [
+    {
+     "asset_id": "AST-0003232",
+     "name": "Accent Chair",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 450.0
+    },
+    {
+     "asset_id": "AST-0003233",
+     "name": "OLED TV",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1800.0
+    },
+    {
+     "asset_id": "AST-0003234",
+     "name": "C1 Series OLED TV",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 2200.0
+    },
+    {
+     "asset_id": "AST-0003235",
+     "name": "Yoga Chaise Lounge",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 550.0
+    },
+    {
+     "asset_id": "AST-0003236",
+     "name": "Mid-Century Display Cabinet - Vintage",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 950.0
+    },
+    {
+     "asset_id": "AST-0003237",
+     "name": "Wooden Bed Frame",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 2600.0
+    },
+    {
+     "asset_id": "AST-0003238",
+     "name": "Nash Round Coffee Table",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 650.0
+    },
+    {
+     "asset_id": "AST-0003239",
+     "name": "Outdoor Sofa Set",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 1200.0
+    },
+    {
+     "asset_id": "AST-0003240",
+     "name": "Sectional Sofa",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 3800.0
+    },
+    {
+     "asset_id": "AST-0003241",
+     "name": "Round Dining Table",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 3000.0
+    },
+    {
+     "asset_id": "AST-0003242",
+     "name": "Abstract Rug",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 300.0
+    },
+    {
+     "asset_id": "AST-0003243",
+     "name": "Freestanding Bathtub",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 1200.0
+    },
+    {
+     "asset_id": "AST-0003244",
+     "name": "Queen Bed Frame",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 1200.0
+    },
+    {
+     "asset_id": "AST-0003245",
+     "name": "Outdoor Patio Chair Set",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 250.0
+    },
+    {
+     "asset_id": "AST-0003246",
+     "name": "Washing Machine",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 1200.0
+    },
+    {
+     "asset_id": "AST-0003247",
+     "name": "Sectional Sofa",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 2600.0
+    },
+    {
+     "asset_id": "AST-0003248",
+     "name": "Gas Range",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 3999.0
+    },
+    {
+     "asset_id": "AST-0003249",
+     "name": "Wall-Mounted Vanity",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 6000.0
+    },
+    {
+     "asset_id": "AST-0003250",
+     "name": "Sculptural Bed Frame",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 750.0
+    },
+    {
+     "asset_id": "AST-0003251",
+     "name": "Floating Vanity",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 2500.0
+    },
+    {
+     "asset_id": "AST-0003252",
+     "name": "Esa Fedrigolli Modern Italian Bronze Vase",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 1177.0
+    }
+   ]
+  },
+  "Large inventory": {
+   "property_id": "PRP-000675",
+   "prediction_time": "2026-03-27 08:05:53",
+   "features": {
+    "documented_asset_count": 80,
+    "documented_category_count": 6,
+    "documented_value_total": 38592.0,
+    "documented_replacement_cost_total": 43828.76,
+    "mean_evidence_rating": 4.5125,
+    "ai_asset_count": 80.0,
+    "ai_category_match_rate": 0.75,
+    "ai_suggestion_acceptance_rate": 0.3375,
+    "ai_estimated_value_total": 54006.0,
+    "ai_estimated_value_mean": 675.075,
+    "ai_estimated_value_max": 32000.0,
+    "ai_count_CAT-001": 29.0,
+    "ai_count_CAT-002": 3.0,
+    "ai_count_CAT-003": 10.0,
+    "ai_count_CAT-004": 5.0,
+    "ai_count_CAT-005": 18.0,
+    "ai_count_CAT-006": 13.0,
+    "ai_count_CAT-007": 2.0,
+    "Property_Type": "apartment",
+    "Occupancy_Type": "tenant",
+    "Number_Of_Occupants": 3,
+    "Number_Of_Bedrooms": 5,
+    "Property_Valuation_AUD": 102002,
+    "Is_Home_Insured": 1,
+    "Insurance_Coverage_Type": "contents-insurance",
+    "Is_Primary": false,
+    "Financial_Literacy_Band": "high",
+    "Insurance_Confidence_1_5": 3,
+    "Engagement_Tier": "casual",
+    "Preferred_Channel": "email",
+    "Preferred_Explanation_Style": "examples",
+    "Notification_Opt_In": false,
+    "Household_Type": "share_house",
+    "Income_Band": "over_150k",
+    "Tenure_Months": 24,
+    "Prior_Claim_Experience": "none",
+    "Underinsurance_Awareness": "somewhat_aware",
+    "Age_Band": "35-44",
+    "Gender": "Prefer not to say",
+    "State": "WA",
+    "Occupation": "Physiotherapist",
+    "Membership_Level": "free",
+    "Account_Status": "active",
+    "video_count": 0.0,
+    "total_video_duration_seconds": 0.0,
+    "mean_video_duration_seconds": 0.0,
+    "total_rooms_covered": 0.0,
+    "total_items_detected": 0.0,
+    "documented_count_CAT-001": 45,
+    "documented_count_CAT-002": 0,
+    "documented_count_CAT-003": 13,
+    "documented_count_CAT-004": 3,
+    "documented_count_CAT-005": 9,
+    "documented_count_CAT-006": 9,
+    "documented_count_CAT-007": 1
+   },
+   "items": [
+    {
+     "asset_id": "AST-0006609",
+     "name": "Microwave Oven",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 137.0
+    },
+    {
+     "asset_id": "AST-0006610",
+     "name": "Menace 2",
+     "category": "Clothings",
+     "category_id": "CAT-004",
+     "value": 280.0
+    },
+    {
+     "asset_id": "AST-0006611",
+     "name": "iPad",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 587.0
+    },
+    {
+     "asset_id": "AST-0006612",
+     "name": "iPhone 13",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 877.0
+    },
+    {
+     "asset_id": "AST-0006613",
+     "name": "Maddon Gas Lift Bed Frame - Queen",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 354.0
+    },
+    {
+     "asset_id": "AST-0006614",
+     "name": "OLED TV",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1799.0
+    },
+    {
+     "asset_id": "AST-0006615",
+     "name": "Street BMX Bike",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 149.0
+    },
+    {
+     "asset_id": "AST-0006616",
+     "name": "Shark Cordless Stick Vacuum",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 399.0
+    },
+    {
+     "asset_id": "AST-0006617",
+     "name": "Desire Matte Black 3-In-1 Hand Blender",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 68.0
+    },
+    {
+     "asset_id": "AST-0006618",
+     "name": "UH45 Series UHF CB Transceiver",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 109.0
+    },
+    {
+     "asset_id": "AST-0006619",
+     "name": "Digital Kitchen Scale",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 15.0
+    },
+    {
+     "asset_id": "AST-0006620",
+     "name": "Digital Kitchen Scale",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 15.0
+    },
+    {
+     "asset_id": "AST-0006621",
+     "name": "Premium Platform King Base Graphite - Original Mattress & Furniture",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 722.0
+    },
+    {
+     "asset_id": "AST-0006622",
+     "name": "Revivify Support King Mattress",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 878.0
+    },
+    {
+     "asset_id": "AST-0006623",
+     "name": "Microfibre Jersey Plus Mattress Protector",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": null
+    },
+    {
+     "asset_id": "AST-0006624",
+     "name": "Dakota Sleeveless Shell Top",
+     "category": "Clothings",
+     "category_id": "CAT-004",
+     "value": 48.0
+    },
+    {
+     "asset_id": "AST-0006625",
+     "name": "PIXPRO FZ45",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 247.0
+    },
+    {
+     "asset_id": "AST-0006626",
+     "name": "32GB Ultra microSDHC Memory Card",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 12.0
+    },
+    {
+     "asset_id": "AST-0006627",
+     "name": "64GB Extreme PRO MicroSD",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 18.0
+    },
+    {
+     "asset_id": "AST-0006628",
+     "name": "iPhone 13 128GB",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 877.0
+    },
+    {
+     "asset_id": "AST-0006629",
+     "name": "AF-35C Breathalyzer",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 189.0
+    },
+    {
+     "asset_id": "AST-0006630",
+     "name": "Foot Spa",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 40.0
+    },
+    {
+     "asset_id": "AST-0006631",
+     "name": "Rice Cooker 6 Cup",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 14.0
+    },
+    {
+     "asset_id": "AST-0006632",
+     "name": "Rice Cooker",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 14.0
+    },
+    {
+     "asset_id": "AST-0006633",
+     "name": "Reflex Training Punching Bag",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 59.0
+    },
+    {
+     "asset_id": "AST-0006634",
+     "name": "Fresh Pro Steam Cleaner",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 68.0
+    },
+    {
+     "asset_id": "AST-0006635",
+     "name": "Powerbeats Pro",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 20.0
+    },
+    {
+     "asset_id": "AST-0006636",
+     "name": "Galaxy S24 FE 5G",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1187.0
+    },
+    {
+     "asset_id": "AST-0006637",
+     "name": "Ultra Rapid Charger 25W",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 39.0
+    },
+    {
+     "asset_id": "AST-0006638",
+     "name": "Leather Wallet Case",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 60.0
+    },
+    {
+     "asset_id": "AST-0006639",
+     "name": "Galaxy S21 Wallet Case",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 60.0
+    },
+    {
+     "asset_id": "AST-0006640",
+     "name": "Samsung Galaxy S24 FE Screen Shield",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 25.0
+    },
+    {
+     "asset_id": "AST-0006641",
+     "name": "Netburner Ballistic FF 3",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 239.0
+    },
+    {
+     "asset_id": "AST-0006642",
+     "name": "iPad Mini 6",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 40.0
+    },
+    {
+     "asset_id": "AST-0006643",
+     "name": "10.9-inch Case",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 46.0
+    },
+    {
+     "asset_id": "AST-0006644",
+     "name": "DiamondForce Electric Wok",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 149.0
+    },
+    {
+     "asset_id": "AST-0006645",
+     "name": "Rice Express Rice Cooker",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 49.0
+    },
+    {
+     "asset_id": "AST-0006646",
+     "name": "Stainless Steel Electric Kettle",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 60.0
+    },
+    {
+     "asset_id": "AST-0006647",
+     "name": "Food Steamer",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 59.0
+    },
+    {
+     "asset_id": "AST-0006648",
+     "name": "Patio Heater",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 229.0
+    },
+    {
+     "asset_id": "AST-0006649",
+     "name": "PIXPRO FZ43",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 217.0
+    },
+    {
+     "asset_id": "AST-0006650",
+     "name": "Electric Air Pump",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 25.0
+    },
+    {
+     "asset_id": "AST-0006651",
+     "name": "Stockholm Rug",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 35.0
+    },
+    {
+     "asset_id": "AST-0006652",
+     "name": "Knee Sleeve",
+     "category": "Clothings",
+     "category_id": "CAT-004",
+     "value": 80.0
+    },
+    {
+     "asset_id": "AST-0006653",
+     "name": "Standing Mirror",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 79.0
+    },
+    {
+     "asset_id": "AST-0006654",
+     "name": "TravelPro Maxlite 5",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 55.0
+    },
+    {
+     "asset_id": "AST-0006655",
+     "name": "Chest Freezer",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 589.0
+    },
+    {
+     "asset_id": "AST-0006656",
+     "name": "Stockpot",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 80.0
+    },
+    {
+     "asset_id": "AST-0006657",
+     "name": "Ingenio Essential Non-Stick Cookware Set",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 150.0
+    },
+    {
+     "asset_id": "AST-0006658",
+     "name": "Digital Kitchen Scales",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 15.0
+    },
+    {
+     "asset_id": "AST-0006659",
+     "name": "Weighted Blanket",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 140.0
+    },
+    {
+     "asset_id": "AST-0006660",
+     "name": "Shutter Yoyo",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 25.0
+    },
+    {
+     "asset_id": "AST-0006661",
+     "name": "Legend",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 45.0
+    },
+    {
+     "asset_id": "AST-0006662",
+     "name": "Mario Kart Themed Controller",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 34.0
+    },
+    {
+     "asset_id": "AST-0006663",
+     "name": "Mini Projector",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 180.0
+    },
+    {
+     "asset_id": "AST-0006664",
+     "name": "65-Inch 4K QLED Smart TV",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1500.0
+    },
+    {
+     "asset_id": "AST-0006665",
+     "name": "Urn",
+     "category": "Appliances",
+     "category_id": "CAT-005",
+     "value": 149.0
+    },
+    {
+     "asset_id": "AST-0006666",
+     "name": "B2236dw",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 474.0
+    },
+    {
+     "asset_id": "AST-0006667",
+     "name": "Drawer Storage Tower",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 109.0
+    },
+    {
+     "asset_id": "AST-0006668",
+     "name": "Heavy Duty Staple Gun",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 28.0
+    },
+    {
+     "asset_id": "AST-0006669",
+     "name": "Fujifilm Instax Mini 60 Shot Pack",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 69.0
+    },
+    {
+     "asset_id": "AST-0006670",
+     "name": "Pavilion 24 All-in-One",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 1399.0
+    },
+    {
+     "asset_id": "AST-0006671",
+     "name": "PlayStation 4",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 500.0
+    },
+    {
+     "asset_id": "AST-0006672",
+     "name": "PlayStation 5",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 799.0
+    },
+    {
+     "asset_id": "AST-0006673",
+     "name": "Battery Storage Case",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 28.0
+    },
+    {
+     "asset_id": "AST-0006674",
+     "name": "Longlife 9V Batteries",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 24.0
+    },
+    {
+     "asset_id": "AST-0006675",
+     "name": "Longlife C Alkaline Batteries",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 24.0
+    },
+    {
+     "asset_id": "AST-0006676",
+     "name": "Varta Longlife D Alkaline Batteries",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 30.0
+    },
+    {
+     "asset_id": "AST-0006677",
+     "name": "Outdoor Picnic Blanket",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 50.0
+    },
+    {
+     "asset_id": "AST-0006678",
+     "name": "Lightweight Stroller",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 69.0
+    },
+    {
+     "asset_id": "AST-0006679",
+     "name": "Compact Stroller",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 17.0
+    },
+    {
+     "asset_id": "AST-0006680",
+     "name": "500 Thread Count Cotton Sheet Set",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 69.0
+    },
+    {
+     "asset_id": "AST-0006681",
+     "name": "Cotton Sheet Set King",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 69.0
+    },
+    {
+     "asset_id": "AST-0006682",
+     "name": "Layback Umbrella Stroller",
+     "category": "Other Items",
+     "category_id": "CAT-006",
+     "value": 65.0
+    },
+    {
+     "asset_id": "AST-0006683",
+     "name": "WH-1000XM4",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 40.0
+    },
+    {
+     "asset_id": "AST-0006684",
+     "name": "WH-CH510",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 20.0
+    },
+    {
+     "asset_id": "AST-0006685",
+     "name": "Phone & Tablet Headrest Holder",
+     "category": "Electronics",
+     "category_id": "CAT-001",
+     "value": 15.0
+    },
+    {
+     "asset_id": "AST-0006686",
+     "name": "Kids Sofa Chair",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 39.0
+    },
+    {
+     "asset_id": "AST-0006687",
+     "name": "Luxury Faux Fur Throw",
+     "category": "Furniture",
+     "category_id": "CAT-003",
+     "value": 20.0
+    },
+    {
+     "asset_id": "AST-0006688",
+     "name": "H6",
+     "category": "Vehicles",
+     "category_id": "CAT-007",
+     "value": 21000.0
+    }
+   ]
+  }
+ },
+ "holdout": {
+  "states": 55,
+  "top_2": 0.7091,
+  "top_3": 0.8364
+ },
+ "built_from": "model_state.csv, assets and base_categories sheets"
+}

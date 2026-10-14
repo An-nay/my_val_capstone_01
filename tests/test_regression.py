@@ -30,7 +30,10 @@ def test_predict_household_value_rejects_other_basket_sizes():
         predict_household_value(row)
 
 
-@pytest.mark.skipif(not (PROCESSED_DIR / "test_df.parquet").exists(), reason="needs the tables")
+@pytest.mark.skipif(
+    not ((PROCESSED_DIR / "test_df.parquet").exists() and (INTERIM_DIR / "test_ensemble_predictions.parquet").exists()),
+    reason="needs the tables and the saved test predictions of notebook 05_ky_test_evaluation",
+)
 def test_predictions_equal_the_saved_test_predictions():
     test_df = pd.read_parquet(PROCESSED_DIR / "test_df.parquet")
     saved = pd.read_parquet(INTERIM_DIR / "test_ensemble_predictions.parquet")
