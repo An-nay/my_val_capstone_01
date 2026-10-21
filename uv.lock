@@ -1013,22 +1013,27 @@ name = "my-val-capstone-01"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [
-    { name = "catboost" },
     { name = "fastapi" },
+    { name = "joblib" },
+    { name = "loguru" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "python-dotenv" },
+    { name = "scikit-learn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "catboost" },
     { name = "ipython" },
     { name = "jupyterlab" },
-    { name = "loguru" },
     { name = "matplotlib" },
     { name = "mkdocs" },
     { name = "notebook" },
-    { name = "numpy" },
     { name = "openpyxl" },
-    { name = "pandas" },
     { name = "pip" },
     { name = "pytest" },
-    { name = "python-dotenv" },
     { name = "ruff" },
-    { name = "scikit-learn" },
     { name = "tqdm" },
     { name = "typer" },
     { name = "uvicorn" },
@@ -1036,22 +1041,27 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "catboost", specifier = ">=1.2.10" },
     { name = "fastapi", specifier = ">=0.141.1" },
+    { name = "joblib" },
+    { name = "loguru" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "python-dotenv" },
+    { name = "scikit-learn" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "catboost", specifier = ">=1.2.10" },
     { name = "ipython" },
     { name = "jupyterlab" },
-    { name = "loguru" },
     { name = "matplotlib" },
     { name = "mkdocs" },
     { name = "notebook" },
-    { name = "numpy" },
     { name = "openpyxl", specifier = ">=3.1.5" },
-    { name = "pandas" },
     { name = "pip" },
     { name = "pytest" },
-    { name = "python-dotenv" },
     { name = "ruff" },
-    { name = "scikit-learn" },
     { name = "tqdm" },
     { name = "typer" },
     { name = "uvicorn", specifier = ">=0.54.0" },
@@ -1253,7 +1263,7 @@ name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "ptyprocess" },
+    { name = "ptyprocess", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f", size = 166450, upload-time = "2023-11-25T09:07:26.339Z" }
 wheels = [
