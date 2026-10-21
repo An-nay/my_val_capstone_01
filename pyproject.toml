@@ -16,32 +16,36 @@ classifiers = [
     
 ]
 dependencies = [
-    "catboost>=1.2.10",
     "fastapi>=0.141.1",
-    "ipython",
     "joblib",
-    "jupyterlab",
-    "lightgbm",
     "loguru",
+    "numpy",
+    "pandas",
+    "python-dotenv",
+    "lightgbm",
+    "scikit-learn",
+    "scipy",
+    "typer",
+    "xgboost-cpu==3.2.0",  # CPU-only build (no CUDA libs, keeps the function bundle small); pinned: the tuning search of the regression selects other candidates with other XGBoost versions
+]
+requires-python = "~=3.12.0"
+
+[dependency-groups]
+dev = [
+    "catboost>=1.2.10",
+    "ipython",
+    "jupyterlab",
     "matplotlib",
     "mkdocs",
     "notebook",
-    "numpy",
     "openpyxl>=3.1.5",
-    "pandas",
     "pip",
     "pyarrow",
     "pytest",
-    "python-dotenv",
     "ruff",
-    "scikit-learn",
-    "scipy",
     "tqdm",
-    "typer",
     "uvicorn>=0.54.0",
-    "xgboost==3.2.0",  # pinned: the tuning search of the regression selects other candidates with other XGBoost versions
 ]
-requires-python = "~=3.12.0"
 
 
 [tool.ruff]
