@@ -43,6 +43,9 @@ def regression_info():
         frozen = load_regression_models()[2]
         return {"min_items": int(CHECKPOINTS[0]), "confidence_level": float(frozen["confidence_level"])}
     except Exception:
+        from loguru import logger
+
+        logger.exception("The household-value regression could not be loaded")
         return None
 
 
