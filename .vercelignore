@@ -1,0 +1,7 @@
+notebooks/
+docs/
+references/
+reports/
+tests/
+tree.txt
+Makefile
