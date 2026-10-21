@@ -1,6 +1,12 @@
 # Data
 /data/
 
+# Random Forest models fitted with the regression columns (about 19 MB, created by notebooks/classification/04_fm_modelling.ipynb)
+/models/classification/*.joblib
+
+# CatBoost training logs
+catboost_info/
+
 # Mac OS-specific storage files
 .DS_Store
 
@@ -189,3 +195,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Office lock files (for example while a presentation is open)
+~$*
